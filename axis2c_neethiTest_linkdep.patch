@@ -1,0 +1,28 @@
+--- neethi/test/Makefile.am.orig
++++ neethi/test/Makefile.am
+@@ -13,4 +13,5 @@ INCLUDES = -I$(top_builddir)/include \
+ test_LDADD = $(top_builddir)/src/libneethi.la \
+ 			../../axiom/src/om/libaxis2_axiom.la \
+ 			../../util/src/libaxutil.la \
++			../../axiom/src/parser/libxml2/libaxis2_parser.la \
+ 			../src/libneethi.la
+--- neethi/test/Makefile.in.orig
++++ neethi/test/Makefile.in
+@@ -49,7 +49,8 @@ am_test_OBJECTS = test.$(OBJEXT)
+ test_OBJECTS = $(am_test_OBJECTS)
+ test_DEPENDENCIES = $(top_builddir)/src/libneethi.la \
+ 	../../axiom/src/om/libaxis2_axiom.la \
+-	../../util/src/libaxutil.la ../src/libneethi.la
++	../../util/src/libaxutil.la \
++	../../axiom/src/parser/libxml2/libaxis2_parser.la ../src/libneethi.la
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -188,6 +189,7 @@ INCLUDES = -I$(top_builddir)/include \
+ test_LDADD = $(top_builddir)/src/libneethi.la \
+ 			../../axiom/src/om/libaxis2_axiom.la \
+ 			../../util/src/libaxutil.la \
++			../../axiom/src/parser/libxml2/libaxis2_parser.la \
+ 			../src/libneethi.la
+ 
+ all: all-am
